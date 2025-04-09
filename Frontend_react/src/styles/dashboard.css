@@ -1,0 +1,63 @@
+/* Main dashboard layout */
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "topbar topbar"
+    "sidebar content";
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 60px 1fr;
+  min-height: 100vh;
+}
+
+/* Top bar positioning */
+.top-bar {
+  grid-area: topbar;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Sidebar positioning */
+.sidebar {
+  grid-area: sidebar;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+/* Main content area */
+.dashboard-content {
+  grid-area: content;
+  padding: 2rem;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+  background-color: #f8f9fa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-areas:
+      "topbar"
+      "content";
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: -250px;
+    transition: left 0.3s ease;
+    z-index: 90;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+    height: calc(100vh - 60px);
+  }
+}
