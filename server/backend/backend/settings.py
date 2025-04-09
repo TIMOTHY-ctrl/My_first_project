@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-&ys0t^m7@4q*i@ds_j$0_+s*b4lhcgugrv_wad+@=ya6ds)kg1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [" mwizetom.pythonanywhere.com", "localhost"]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -75,6 +75,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -161,7 +162,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://your-react-domain.com",  # Your production frontend
+    "http://localhost:3000",         # React dev server
+]
 CORS_ALLOWS_CREDENTIALS = True
 
 AUTHENTICATION_BACKENDS = [
