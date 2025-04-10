@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
-    'rest_framewoimplejwtrk_s',
+    'rest_framework_simplejwt',
     'corsheaders',
     
 ]
@@ -111,14 +111,20 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_pythonanywhere_db_name',
-        'USER': 'your_pythonanywhere_username',
-        'PASSWORD': 'your_db_password',
-        'HOST': 'yourusername.postgres.pythonanywhere-services.com',
-        'PORT': '5432',  # Default PostgreSQL port
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # Creates a local SQLite file
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mwizetom$default',
+#         'USER': 'mwizetom',
+#         'PASSWORD': '12345',
+#         'HOST': 'mwizetom.mysql.pythonanywhere-services.com',
+#         'PORT': '3306',  # Default PostgreSQL port
+#     }
+# }
 
 
 # Password validation
@@ -163,8 +169,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://your-react-domain.com",  # Your production frontend
-    "http://localhost:3000",         # React dev server
+    "http://127.0.0.1:5173",  # Your production frontend
+    "http://localhost:5173",         # React dev server
 ]
 CORS_ALLOWS_CREDENTIALS = True
 
