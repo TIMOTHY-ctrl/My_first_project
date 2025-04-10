@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-&ys0t^m7@4q*i@ds_j$0_+s*b4lhcgugrv_wad+@=ya6ds)kg1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [" mwizetom.pythonanywhere.com", "localhost"]
+ALLOWED_HOSTS = [" mwizetom.pythonanywhere.com", "localhost",'127.0.0.1']
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -118,7 +118,7 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'mwizetom$default',
+#         'NAME': 'mwizetom$mwizetom-1_ctrl',
 #         'USER': 'mwizetom',
 #         'PASSWORD': '12345',
 #         'HOST': 'mwizetom.mysql.pythonanywhere-services.com',
